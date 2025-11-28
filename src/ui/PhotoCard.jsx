@@ -1,8 +1,12 @@
+import { Link } from 'react-router-dom'
+
 function PhotoCard(props) {
     return (
         <>
-            <h2>{props.PhotoTitle}</h2>
-            <img src={props.Filename} alt={props.PhotoTitle} width="300" />
+            <Link to={`/details/${props.PhotoId}`}>
+                <img src={props.Filename} alt={props.PhotoTitle} />
+                <div className="label">{props.PhotoTitle}</div>
+            </Link>
         </>
     )
 }

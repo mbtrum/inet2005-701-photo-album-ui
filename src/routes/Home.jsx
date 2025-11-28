@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import PhotoCard from './ui/PhotoCard.jsx'
+import PhotoCard from '../ui/PhotoCard.jsx'
 
 function Home() {
   const [photos, setPhotos] = useState([]) // empty collection of photos
@@ -14,7 +14,7 @@ function Home() {
         if(response.ok) { 
             setPhotos(result)
         }
-    } 
+    }
 
     getPhotos()
   }, [])  
@@ -23,17 +23,20 @@ function Home() {
     <>
       <h1>Photo Album</h1>
 
+      <div className="masonry-grid">
       {
         photos.length > 0 &&
           photos.map(photo => (
-            <div key={photo.PhotoId}>
-                <PhotoCard              
+            <div key={photo.PhotoId} className="masonry-grid-item">
+                <PhotoCard         
+                    PhotoId={photo.PhotoId}
                     PhotoTitle={photo.PhotoTitle}
                     Filename={photo.Filename}
                 />
             </div>
           ))
       }
+      </div>
     </>
   )
 }
