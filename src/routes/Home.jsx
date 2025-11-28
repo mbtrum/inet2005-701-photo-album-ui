@@ -4,6 +4,7 @@ import PhotoCard from '../ui/PhotoCard.jsx'
 function Home() {
   const [photos, setPhotos] = useState([]) // empty collection of photos
 
+  // ../api/photos
   const apiUrl = import.meta.env.VITE_API_URL
 
   useEffect(() => { 
