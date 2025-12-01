@@ -24,10 +24,12 @@ function Comment() {
         })
 
         if (response.ok) {
+            // TO-DO: re-direct back to the details page.
+            
             alert('Comment added successfully!')
         }
         else {
-            alert('Failed to add comment.')
+            alert('Failed to add comment. Please try again.')
         }
     }
 
